@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners & Collaborations</title>
+
+<style>
+:root{
+  --green:#556B2F;
+  --green-dark:#3E5320;
+  --peach:#FFDAB9;
+  --cream:#FFF5E1;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Segoe UI,sans-serif;
+  background:var(--cream);
+  color:#333;
+}
+
+/* ===== STICKY NAVBAR ===== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--green-dark);
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #444;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  height:40px;
+  width:auto;
+}
+
+nav strong{
+  color:var(--peach);
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--peach);
+  font-weight:500;
+  transition:color 0.3s;
+}
+
+nav a.active{
+  background:rgba(255,218,185,0.2);
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+nav a:hover{
+  color:#FFF5E1;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links{
+  display:flex;
+  gap:18px;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:var(--peach);
+  border-radius:3px;
+}
+
+/* ===== MOBILE NAV ===== */
+@media(max-width:768px){
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:var(--green-dark);
+    flex-direction:column;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 6px 14px rgba(0,0,0,.25);
+    display:none;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .nav-links a{
+    margin:10px 0;
+  }
+}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.section{
+  margin-top:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:18px;
+  text-align:center;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
+
+.card img{
+  max-width:120px;
+  margin-bottom:12px;
+}
+
+.card h3{
+  color:var(--green-dark);
+}
+
+.card-gallery{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin-top:16px;
+}
+
+.card-gallery img{
+  width:70px;
+  height:100px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:pointer;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+
+.card-gallery img:hover{
+  transform:scale(1.05);
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--green-dark);
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+  color:var(--peach);
+}
+
+.contact a{
+  color:var(--green);
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <strong>Rasa Durio Eco Glampz</strong>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="facilities.html">Facilities & Accommodation</a>
+    <a href="Collab.html" class="active">Partners</a>
+  </div>
+</nav>
+
+<main class="container">
+
+<section class="section">
+<h2>🤝 Our Partners & Collaborations</h2>
+<p>We collaborate with trusted outdoor activity providers so guests can enjoy exciting adventures nearby.</p>
+
+<div class="grid">
+
+<div class="card">
+  <img src="images/partners/xventuremind.jpeg" alt="Xventure Mind">
+  <h3>Xventure Mind</h3>
+  <p>Outdoor adventure company specialising in rafting and team building activities.</p>
+  <p>📍 Jalan Kampung Gerachi, Kuala Kubu Baru</p>
+  <div class="card-gallery">
+    <img src="images/Partners/xventuremind1.jpeg">
+    <img src="images/Partners/xventuremind2.jpeg">
+    <img src="images/Partners/xventuremind3.jpeg">
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/partners/paraglidingkkb.jpeg" alt="Paragliding KKB">
+  <h3>Paragliding KKB</h3>
+  <p>Tandem paragliding experience with scenic hill views.</p>
+  <p>📍 Taman Millenium Sports Complex, KKB</p>
+  <div class="card-gallery">
+    <img src="images/Partners/paraglidingkkb1.jpeg">
+    <img src="images/Partners/paraglidingkkb2.jpeg">
+    <img src="images/Partners/paraglidingkkb3.jpeg">
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/partners/andrenx.png" alt="Adren X Park">
+  <h3>Adren X Park</h3>
+  <p>Adventure park offering ATV, rafting and ziplining.</p>
+  <p>📍 Kabin Biru, Kuala Kubu Baru</p>
+  <div class="card-gallery">
+    <img src="images/Partners/andrenx1.png">
+    <img src="images/Partners/andrenx2.png">
+    <img src="images/Partners/andrenx3.png">
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/partners/malimgunung.png" alt="Malim Gunung">
+  <h3>Malim Gunung</h3>
+  <p>Professional mountain guides for hiking and trekking.</p>
+  <div class="card-gallery">
+    <img src="images/Partners/malimgunung1.png">
+    <img src="images/Partners/malimgunung2.png">
+    <img src="images/Partners/malimgunung3.png">
+  </div>
+</div>
+
+<div class="card">
+  <img src="images/partners/hikersclimbers.png" alt="Hikers Climbers">
+  <h3>Hikers Climbers</h3>
+  <p>Outdoor safety training and hiking programs.</p>
+  <div class="card-gallery">
+    <img src="images/Partners/hikersclimbers1.png">
+    <img src="images/Partners/hikersclimbers2.png">
+    <img src="images/Partners/hikersclimbers3.png">
+  </div>
+</div>
+
+</div>
+</section>
+
+<section class="section contact">
+<h2>📞 Contact</h2>
+<p>Email: <a href="mailto:rasadurioecoglampz@gmail.com">rasadurioecoglampz@gmail.com</a></p>
+<p>WhatsApp: <a href="https://wa.me/60192818191">+60 19-281 8191</a></p>
+<p>Instagram: <a href="https://instagram.com/rasadurioecoglampz">@rasadurioecoglampz</a></p>
+<p>TikTok: <a href="https://tiktok.com/@rasadurioglampzregz">@rasadurioglampzregz</a></p>
+<p>Facebook: <a href="https://facebook.com/inap.dusun.regz">@Inap Dusun Regz</a></p>
+<p>Address: Lot 481, Jalan Ampang Pecah Rasa, 44200 KKB, Selangor (To Come here Please Search Kopi Kisar Kebun KKB)</p>
+</section>
+
+</main>
+
+<footer>© 2025 Rasa Durio Eco Glampz</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

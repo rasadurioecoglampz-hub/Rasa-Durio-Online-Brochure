@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rasa Durio Eco Glampz — Visitor Info</title>
+
+<style>
+:root{
+  --green:#556B2F;
+  --green-dark:#3E5320;
+  --peach:#FFDAB9;
+  --cream:#FFF5E1;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Segoe UI,sans-serif;
+  background:var(--cream);
+  color:#333;
+}
+
+/* ===== STICKY NAVBAR ===== */
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:var(--green-dark);
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:2px solid #444;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+.nav-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  height:40px;
+  width:auto;
+}
+
+nav strong{
+  color:var(--peach);
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+nav a{
+  margin-left:18px;
+  text-decoration:none;
+  color:var(--peach);
+  font-weight:500;
+  transition:color 0.3s;
+}
+
+nav a.active{
+  background:rgba(255,218,185,0.2);
+  padding:6px 10px;
+  border-radius:8px;
+}
+
+nav a:hover{
+  color:#FFF5E1;
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links{
+  display:flex;
+  gap:18px;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:var(--peach);
+  border-radius:3px;
+}
+
+/* ===== MOBILE NAV ===== */
+@media(max-width:768px){
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:var(--green-dark);
+    flex-direction:column;
+    padding:15px;
+    border-radius:14px;
+    box-shadow:0 6px 14px rgba(0,0,0,.25);
+    display:none;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .nav-links a{
+    margin:10px 0;
+  }
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:420px;
+  position:relative;
+}
+
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:brightness(0.8);
+}
+
+.hero-text{
+  position:absolute;
+  bottom:40px;
+  left:40px;
+  background:var(--peach);
+  color:var(--green-dark);
+  padding:22px 26px;
+  border-radius:16px;
+  font-weight:600;
+}
+
+/* ===== CONTENT ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:30px 20px;
+}
+
+.section{
+  margin-top:40px;
+}
+
+h2{color:var(--green-dark)}
+h3{color:var(--green)}
+
+/* ===== 3x3 GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr);}
+}
+
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;}
+}
+
+.card{
+  background:var(--peach);
+  padding:20px;
+  border-radius:18px;
+  box-shadow:0 6px 14px rgba(0,0,0,.12);
+  color:var(--green-dark);
+}
+
+/* ===== MAP ===== */
+.map-zoom img,
+.map-zoom iframe{
+  width:100%;
+  height:360px;
+  border-radius:16px;
+  cursor:zoom-in;
+}
+
+.map-instruction{
+  margin-top:10px;
+  font-size:0.9rem;
+  color:var(--green);
+  text-align:center;
+  opacity:0.9;
+}
+
+/* ===== MAP MODAL ===== */
+.map-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.map-modal img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:16px;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--green-dark);
+  text-align:center;
+  padding:25px;
+  margin-top:40px;
+  color:var(--peach);
+}
+
+.contact a{
+  color:var(--green);
+  text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <strong>Rasa Durio Eco Glampz</strong>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="index.html" class="active">Home</a>
+    <a href="facilities.html">Facilities & Accommodation</a>
+    <a href="Collab.html">Partners</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="images/banner.jpg" alt="Banner">
+  <div class="hero-text">
+    <h1>INAP DUSUN RASA DURIO</h1>
+    <p>Eco Glampz · Relax · Makan · Inap</p>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="section">
+<h2>🌿 About Us</h2>
+<ul>
+  <li>Nature-based orchard staycation located in Rasa, Selangor.</li>
+  <li>Family-owned eco retreat operating since 2021.</li>
+  <li>Located within a 20.4-acre orchard environment.</li>
+  <li>Offers peaceful rural experience close to nature.</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>🍃 Products, Services & Packages</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🏕 Accommodation</h3>
+<ul>
+  <li>Framed Bell Tent (3 pax)</li>
+  <li>Bell Tent (5 pax)</li>
+  <li>Hill Top Chalet (4 pax)</li>
+  <li>Durio Cottage (7 pax)</li>
+  <li>Shelter Spot (2 Tapak)</li>
+  <li>Nature Spot (2 Tapak)</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🌳 Agriculture</h3>
+<ul>
+  <li>Durian (seasonal)</li>
+  <li>Mangosteen</li>
+  <li>Rambutan</li>
+  <li>Pulasan</li>
+  <li>Cempedak</li>
+  <li>Ciku</li>
+  <li>Kuini</li>
+  <li>Dokong</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🐟 Aquaculture</h3>
+<ul>
+  <li>Red Tilapia</li>
+  <li>Silver Catfish (Patin)</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>☕ Café</h3>
+<ul>
+  <li>Coffee</li>
+  <li>Refreshing drinks</li>
+  <li>Snacks</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>📦 Packages</h3>
+<ul>
+  <li>Standard Package</li>
+  <li>Team Building Packages</li>
+  <li>Family Day Packages</li>
+  <li>Nature Retreat Package</li>
+  <li>Day Trip Package</li>
+  <li>January Promotion Package</li>
+  <li>Swimming Pool/River Package</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>🏡 Facilities</h3>
+<ul>
+  <li>Toilet & shower</li>
+  <li>Surau</li>
+  <li>Gazebo & picnic areas</li>
+  <li>Buggy service</li>
+  <li>ATV transport</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<h3>⚠️ Guest Rules & Guidelines</h3>
+<ul>
+  <li>No smoking, alcohol, or drugs allowed.</li>
+  <li>Please keep the environment clean.</li>
+  <li>Do not pick fruits without permission.</li>
+  <li>Children must be supervised at all times.</li>
+  <li>Use facilities at own risk.</li>
+</ul>
+</section>
+
+<section class="section">
+<h2>🗺️ Site Layout Map</h2>
+<div class="map-zoom">
+  <img src="images/map.jpg" alt="Map" onclick="openMap()">
+</div>
+<p class="map-instruction">📱 Tap or click the map to zoom.</p>
+</section>
+
+<section class="section">
+<h2>📍 Location</h2>
+<div class="map-zoom">
+<iframe src="https://www.google.com/maps?q=Rasa%20Durio%20Eco%20Glampz&output=embed"></iframe>
+</div>
+</section>
+
+<section class="section contact">
+<h2>📞 Contact</h2>
+<p>Email: <a href="mailto:rasadurioecoglampz@gmail.com">rasadurioecoglampz@gmail.com</a></p>
+<p>WhatsApp: <a href="https://wa.me/60192818191">+60 19-281 8191</a></p>
+<p>Instagram: <a href="https://instagram.com/rasadurioecoglampz">@rasadurioecoglampz</a></p>
+<p>TikTok: <a href="https://tiktok.com/@rasadurioglampzregz">@rasadurioglampzregz</a></p>
+<p>Facebook: <a href="https://facebook.com/inap.dusun.regz">@Inap Dusun Regz</a></p>
+<p>Address: Lot 481, Jalan Ampang Pecah Rasa, 44200 KKB, Selangor (To Come here Please Search Kopi Kisar Kebun KKB)</p>
+</section>
+
+</main>
+
+<footer>© 2025 Rasa Durio Eco Glampz</footer>
+
+<div class="map-modal" id="mapModal" onclick="closeMap()">
+  <img src="images/map.jpg" alt="Zoomed Map">
+</div>
+
+<script>
+function openMap(){
+  document.getElementById("mapModal").style.display="flex";
+}
+function closeMap(){
+  document.getElementById("mapModal").style.display="none";
+}
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
